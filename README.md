@@ -32,7 +32,7 @@
 #### Link de Netlify
 
 ```http
-  GET https://rickandmortyapi.com/api/character/${id}
+  https://nbalegend.netlify.app/players
 ```
 
 
