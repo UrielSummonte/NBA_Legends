@@ -7,26 +7,51 @@ const api = axios.create({
 })
 
 export const getPlayers = async () => {
-  const response = await api.get("/players")
-  return response.data
+  try {
+    const response = await api.get("/players")
+    return response.data
+  } catch (error) {
+    console.error("Error al obtener los jugadores:", error)
+    throw error
+  }
 }
 
 export const getPlayer = async (id) => {
-  const response = await api.get(`/players/${id}`)
-  return response.data
+  try {
+    const response = await api.get(`/players/${id}`)
+    return response.data
+  } catch (error) {
+    console.error(`Error al obtener el jugador con ID ${id}:`, error)
+    throw error
+  }
 }
 
 export const createPlayer = async (player) => {
-  const response = await api.post("/players", player)
-  return response.data
+  try {
+    const response = await api.post("/players", player)
+    return response.data
+  } catch (error) {
+    console.error("Error al crear el jugador:", error)
+    throw error
+  }
 }
 
 export const updatePlayer = async (id, player) => {
-  const response = await api.put(`/players/${id}`, player)
-  return response.data
+  try {
+    const response = await api.put(`/players/${id}`, player)
+    return response.data
+  } catch (error) {
+    console.error(`Error al actualizar el jugador con ID ${id}:`, error)
+    throw error
+  }
 }
 
 export const deletePlayer = async (id) => {
-  await api.delete(`/players/${id}`)
+  try {
+    await api.delete(`/players/${id}`)
+  } catch (error) {
+    console.error(`Error al eliminar el jugador con ID ${id}:`, error)
+    throw error
+  }
 }
 
