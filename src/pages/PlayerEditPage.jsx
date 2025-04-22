@@ -48,7 +48,7 @@ const PlayerEditPage = () => {
       <div className="text-center py-8">
         <p className="text-red-500 mb-4">{error || 'Jugador no encontrado'}</p>
         <Link
-          to="/items"
+          to="/players"
           className="px-4 py-2 rounded-md font-medium transition-colors bg-blue-600 text-white hover:bg-blue-700"
         >
           Volver a Jugadores

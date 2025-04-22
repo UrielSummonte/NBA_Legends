@@ -30,7 +30,7 @@ const Navbar = () => {
             <Link
               to="/players"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                isActive('/items')
+                isActive('/players')
                   ? 'bg-blue-800 text-white'
                   : 'text-blue-100 hover:bg-blue-600'
               }`}
@@ -41,7 +41,7 @@ const Navbar = () => {
             <Link
               to="/players/create"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                isActive('/items/create')
+                isActive('/players/create')
                   ? 'bg-blue-800 text-white'
                   : 'text-blue-100 hover:bg-blue-600'
               }`}

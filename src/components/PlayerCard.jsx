@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { toast } from 'react-toastify'
 
 const PlayerCard = ({ player, onDelete }) => {
   const handleDelete = () => {
@@ -15,6 +16,8 @@ const PlayerCard = ({ player, onDelete }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         onDelete(player.id)
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        toast.info('Se canceló la accion')
       }
     })
   }
@@ -68,7 +71,7 @@ const PlayerCard = ({ player, onDelete }) => {
         <div className="space-x-2">
           <Link
             to={`/players/${player.id}/edit`}
-            className="text-gray-300 hover:text-white"
+            className="text-gray-300 hover:text-white cursor-pointer"
           >
             Editar
           </Link>

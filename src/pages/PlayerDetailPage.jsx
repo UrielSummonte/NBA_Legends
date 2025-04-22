@@ -60,6 +60,7 @@ const PlayerDetailPage = () => {
           await removePlayer(id)
           navigate('/players')
         } catch (err) {
+          toast.error('Error al eliminar el jugador')
           console.error(err)
         }
       }
